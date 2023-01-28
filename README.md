@@ -8,7 +8,7 @@ This is a generic [k6](https://k6.io/) performance testing framework that can be
 
 To use this framework, you need to have Node.js and k6 installed on your machine.
 
--Clone the Repository
+- Clone the Repository
 
 ```bash
 > git clone https://github.com/yourusername/k6-performance-testing-framework.git
@@ -16,10 +16,11 @@ To use this framework, you need to have Node.js and k6 installed on your machine
 > npm install
 ```
 
--Install k6
+- Install k6
+
+```bash
 https://k6.io/docs/get-started/installation/
-
-
+```
 ## Folder Structure
 
 Code is structured as shown below:

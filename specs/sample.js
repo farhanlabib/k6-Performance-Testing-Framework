@@ -34,11 +34,11 @@ export default function() {
 
   // Check the response for various conditions
   check(response, {
-    'status is 200': (r) => r.status === 400, // Check if the status is 200
+    'status is 200': (r) => r.status === 200, // Check if the status is 200
   });
 
   // If the status is not 201, log the error to the console
-  if (response.status !== 500){
+  if (response.status !== 200){
     console.log(response.body);
   }
 }
