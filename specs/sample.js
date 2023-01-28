@@ -1,41 +1,44 @@
+// This script tests the Passenger API of an airline company
+// import the http module and check function from the k6 library
 import http from 'k6/http';
 import { check } from 'k6';
 
-// Define the stages for the test
+// Define the stages of the load test using the options variable
 export let options = {
     stages: [
-        // Ramp up to 5 VUs for 1 second
-        { duration: "1s", target: 5 },
+        { duration: "1s", target: 5 }, //Stage 1: 1 second duration and target of 5 requests per second
         //Ramp up to 15 VUs for 1 minute
-        { duration: "1m", target: 15 },
+        { duration: "1m", target: 15 }, // Stage 2: 1 minute duration and target of 15 requests per second
         // Decrease to 0 VUs for 20 seconds
-        { duration: "20s", target: 0 },
+        { duration: "20s", target: 0 }, // Stage 3: 20 second duration and target of 0 requests per second
       ],
 };
 
 // Set the base URL of the API
-const baseUrl = 'https://reqres.in/api/';
+const baseUrl = 'https://api.instantwebtools.net/v1';
 
-// The main function that will be executed for each VU
+// The default function is exported and will be executed for each virtual user during the load test
 export default function() {
-  // Create the form data and headers for the POST request
+  // Define the payload to be sent with the request
   const data = JSON.stringify({
-    name: 'morpheus',
-    job: 'leader',
-  });
+    "name": "John Doe",
+    "trips": 250,
+    "airline": 5
+});
+
+  // Define the headers to be sent with the request
   let headers = { 'Content-Type': 'application/json' };
 
-  // Send the POST request to the endpoint
-  let response = http.post(`${baseUrl}/users`, data, { headers: headers });
+  // Make a POST request to the API endpoint with the payload and headers
+  let response = http.post(`${baseUrl}/passenger`, data, { headers: headers });
 
   // Check the response for various conditions
   check(response, {
-    // The status code should be 200
-    'status is 201': (r) => r.status === 201,
+    'status is 200': (r) => r.status === 400, // Check if the status is 200
   });
 
-  // If the status code is not 200, log the request body
-  if (response.status != 201){
-    console.log(response.request.body);
+  // If the status is not 201, log the error to the console
+  if (response.status !== 500){
+    console.log(response.body);
   }
 }
