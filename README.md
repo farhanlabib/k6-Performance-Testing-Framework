@@ -35,6 +35,8 @@ k6-Performance-Testing-Framework/
 
 The performance tests are configured using the options variable in the test script. The options variable defines the stages of the load test, including the duration and target number of requests per second for each stage.
 
+![](./images/1.png)
+
 The current configuration is set up as follows:
 
 - Stage 1: 1 second duration and target of 5 requests per second
@@ -43,7 +45,7 @@ The current configuration is set up as follows:
 
 ## Writing the Test
 
-![](./images/one.png)
+![](./images/2.png)
 
 The test file is a JavaScript file that contains the test script. The script imports the http module and check function from the k6 library. It defines the stages of the load test using the options variable. The test script makes a POST request to the API endpoint with the payload and headers. It checks the response for various conditions and logs the error to the console if the status is not 200.
 
