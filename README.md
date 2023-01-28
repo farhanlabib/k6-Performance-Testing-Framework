@@ -43,7 +43,7 @@ The current configuration is set up as follows:
 
 ## Writing the Test
 
-![](./images/one.png)
+![](./images/1.png)
 
 The test file is a JavaScript file that contains the test script. The script imports the http module and check function from the k6 library. It defines the stages of the load test using the options variable. The test script makes a POST request to the API endpoint with the payload and headers. It checks the response for various conditions and logs the error to the console if the status is not 200.
 
