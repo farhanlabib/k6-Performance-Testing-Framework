@@ -1,6 +1,6 @@
 [![k6](https://img.shields.io/badge/k6-7D64FF.svg?style=for-the-badge&logo=k6&logoColor=white)](https://github.com/grafana/k6)![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black)
 
-# k6 Performance Testing Framework
+#k6 Performance Testing Framework
 
 This is a generic [k6](https://k6.io/) performance testing framework that can be used to test the performance of different APIs. The framework uses the k6 library to send HTTP requests and check the responses for various conditions.
 
