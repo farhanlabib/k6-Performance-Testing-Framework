@@ -11,7 +11,7 @@ To use this framework, you need to have Node.js and k6 installed on your machine
 - Clone the Repository
 
 ```bash
-> git clone https://github.com/yourusername/k6-performance-testing-framework.git
+> git clone https://github.com/farhanlabib/k6-performance-testing-framework.git
 > cd k6-performance-testing-framework
 > npm install
 ```
