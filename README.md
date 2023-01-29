@@ -29,7 +29,7 @@ Code is structured as shown below:
 k6-Performance-Testing-Framework/
  ├── specs                                  # The k6 test file is located in the spec folder.
  │    ├──sample.js                          # k6 test script
- |
+ │
  ├── test.csv                               # Console Log File
 ```
 ## Configuring the Test
